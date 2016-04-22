@@ -1,2 +1,2 @@
 # blog-river
-Single Page Blog
+Single Page Blog.
