@@ -1,5 +1,7 @@
 package com.blog.river.admin;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +19,11 @@ public class AdminServiceImp implements AdminService{
 	@Override
 	public Admin save(Admin admin) {
 		return adminDao.save(admin);
+	}
+
+	@Override
+	public List<Admin> findAll() {
+		return (List<Admin>) adminDao.findAll();
 	}
 
 }
