@@ -22,7 +22,7 @@ public class AdminController {
 	}
 
 	@RequestMapping("/create")
-	public @ResponseBody String create(String email, String name) {
+	public @ResponseBody String create() {
 		String userId = "";
 		try {
 			Admin admin = new Admin("admin", "admin", "ROLE_ADMIN");
