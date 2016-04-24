@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -39,6 +40,17 @@ public class ArticleController {
 	@RequestMapping("/listAllArticles")
 	  public @ResponseBody List<Article> listAll() {
 		return articleService.findAll();
+	  }
+	
+	@RequestMapping("/delete/{id}")
+	  public @ResponseBody String save(@PathVariable("id") Long id) {
+		try {
+			articleService.deleteArticle(id);
+		} catch (Exception e) {
+			return e.getMessage();
+		}finally {
+			return id+" deðerli article silindi!";
+		}
 	  }
 	
 }

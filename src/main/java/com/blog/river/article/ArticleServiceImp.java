@@ -28,5 +28,10 @@ public class ArticleServiceImp implements ArticleService{
 	public Article findByTitle(String title) {
 		return articleDAO.findByTitle(title);
 	}
+
+	@Override
+	public void deleteArticle(Long id) {
+		articleDAO.delete(id);
+	}
 	
 }
