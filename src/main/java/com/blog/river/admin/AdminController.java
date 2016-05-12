@@ -23,6 +23,7 @@ public class AdminController {
 
 	@RequestMapping("/create")
 	public @ResponseBody String create() {
+		System.log.println("The create function was just called!");
 		String userId = "";
 		try {
 			Admin admin = new Admin("admin", "admin", "ROLE_ADMIN");
